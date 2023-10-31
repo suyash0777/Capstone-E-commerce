@@ -13,7 +13,6 @@ import LoginSingUp from "./component/User/LoginSingUp";
 import UpdateProfile from "./component/User/UpdateProfile.jsx";
 import store from "./store/store";
 import { loadUser } from "./store/actions/userAction";
-import UserOptions from "./component/layout/Header/UserOptions.jsx";
 import ProtectedRoute from "./component/Route/ProtectedRoute";
 import { useSelector } from "react-redux";
 import UpdatePassword from "./component/User/UpdatePassword.jsx";
@@ -61,12 +60,11 @@ function App() {
     store.dispatch(loadUser());
     getStripeApiKey();
   }, []);
-  // window.addEventListener("contextmenu", (e) => e.preventDefault());
+  window.addEventListener("contextmenu", (e) => e.preventDefault());
 
   return (
     <Router>
       <Header2 />
-      {isAuthenticated && <UserOptions user={user} />}
 
       {stripeApiKey && (
         <Elements stripe={loadStripe(stripeApiKey)}>

@@ -10,9 +10,7 @@ const Footer = () => {
         <img src={logo} alt="logo" />
       </div>
       <div className="leftFooter">
-        <h4>About</h4>
         <ul>
-          <li></li>
           <li>
             <Link to="/about" className="footer-link">
               About Us
